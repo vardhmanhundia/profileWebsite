@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header/header';
+import Front_display from './Components/FrontDisplay/front_display';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+const theme = {
+  spacing: 4,
+  palette: {
+    primary: '#007bff',
+  },
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MuiThemeProvider theme = {theme} >
+        <Front_display  />
+        <Header />
+      </MuiThemeProvider>
+      
     </div>
   );
 }
