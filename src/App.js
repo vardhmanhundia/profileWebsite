@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Header from './Components/Header/header';
-import Front_display from './Components/FrontDisplay/front_display';
+// import Front_display from './Components/FrontDisplay/front_display';
+import NavBar from './Components/NavBar/navbar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const theme = {
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <MuiThemeProvider theme = {theme} >
-        <Front_display  />
+        <NavBar />
         <Header />
       </MuiThemeProvider>
       
