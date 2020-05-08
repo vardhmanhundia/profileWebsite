@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import Header from './Components/Header/header';
-// import Front_display from './Components/FrontDisplay/front_display';
+import Home from './Containers/home';
+import Experience from './Containers/Experience';
 import NavBar from './Components/NavBar/navbar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -12,16 +12,34 @@ const theme = {
   },
 };
 
-function App() {
-  return (
-    <div className="App">
-      <MuiThemeProvider theme = {theme} >
-        <NavBar />
-        <Header />
-      </MuiThemeProvider>
-      
-    </div>
-  );
+
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.onRouteChange = this.onRouteChange.bind(this);
+
+    this.state = {
+      route: 'Home'
+    }
+  }
+
+  onRouteChange (page) {
+    this.setState({route: page});
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <MuiThemeProvider theme = {theme} >
+          <NavBar onRouteChange= {this.onRouteChange} />
+          { this.state.route === "Home" ? <Home />
+            :
+            <Experience />
+          }
+        </MuiThemeProvider>
+      </div>
+    );
+  }
 }
 
 export default App;

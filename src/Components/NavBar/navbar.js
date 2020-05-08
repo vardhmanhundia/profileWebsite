@@ -7,8 +7,8 @@ import MobileRightMenuSlider from '@material-ui/core/Drawer';
 import MenuIcon from '@material-ui/icons/Menu';
 const userStyles = makeStyles(theme => ({
     menuSliderContainer:{
-        width: 250,
-        background: "gray",
+        width: 300,
+        background: "white",
         height: "100%"
     },
     avatar: {
@@ -44,7 +44,7 @@ const menuItems = [
 
 
 
-const Navbar = () => {
+const Navbar = ({onRouteChange}) => {
     const classes = userStyles();
     const [state, setState] = useState({
         right: false
@@ -55,7 +55,7 @@ const Navbar = () => {
                 <Divider />
                 <List>
                 {menuItems.map((lsItem, key) => (
-                    <ListItem button key={key}>
+                    <ListItem button key={key} onClick={() => onRouteChange(lsItem.listText)} >
                         <ListItemIcon >
                             {lsItem.listIcon}
                         </ListItemIcon>
@@ -73,16 +73,13 @@ const Navbar = () => {
     return (
         <>
         <Box component="nav">
-            <AppBar position="static" style={{background: "#222"}}>
+            <AppBar position="static" style={{background: "transparent"}}>
                 <Toolbar>
                     <IconButton anchor="right" onClick={toggleSlider("right",true)}>
                         <MenuIcon style={{color: "tomato"}}/>
                     </IconButton>
-                    <Typography variant="h5">
-                        Portfolio
-                    </Typography>
                     <MobileRightMenuSlider
-                    anchor="right"
+                    anchor="left"
                     open={state.right}
                     onClose = {toggleSlider("right",false)}
                     >
