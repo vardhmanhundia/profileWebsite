@@ -49,13 +49,18 @@ const Navbar = ({onRouteChange}) => {
     const [state, setState] = useState({
         right: false
     })
+
+    const toggleSlider = (slider, open) => () =>{
+        setState({...state, [slider]: open})
+    };
+
     const sideList = Slider => (
         <Box className={classes.menuSliderContainer} component="div">
                 <Avatar className={classes.avatar} src={ProfilePhoto} alt="ProfilePhoto"  />
                 <Divider />
                 <List>
                 {menuItems.map((lsItem, key) => (
-                    <ListItem button key={key} onClick={() => onRouteChange(lsItem.listText)} >
+                    <ListItem button key={key} onClick={() => onRouteChange(lsItem.listText) } >
                         <ListItemIcon >
                             {lsItem.listIcon}
                         </ListItemIcon>
@@ -66,9 +71,7 @@ const Navbar = ({onRouteChange}) => {
             </Box>
     );
     
-    const toggleSlider = (slider, open) => () =>{
-        setState({...state, [slider]: open})
-    };
+   
     
     return (
         <>

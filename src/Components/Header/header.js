@@ -4,6 +4,7 @@ import { Typography, Box, Button, Avatar, Grid} from '@material-ui/core';
 import ProfilePhoto from '../Images/vardhman.jpg'
 import Typed from 'react-typed';
 import { makeStyles } from '@material-ui/core/styles';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const useStyles = makeStyles(theme => ({
     avatar: {
@@ -12,11 +13,13 @@ const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1)
     },
     title:{
-        color: "gray"
+        color: "gray",
+        textAlign: "center"
     },
     subtitle:{
         color: "tan",
-        margin: "3rem"
+        margin: "3rem",
+        textAlign: "center"
     },
     typedContainer: {
         position: "absolute",
@@ -52,7 +55,7 @@ const Header = () => {
                         <Typed strings={["IoT Engineer","MERN Developer","Web Developer"]} typeSpeed={40} loop/>
                     </Typography>
                     <Button width="20px" variant="contained" color="primary" disableElevation>
-                        Read More
+                    <KeyboardArrowDownIcon/>
                     </Button>
                 </Grid>
             </Box>
