@@ -23,7 +23,7 @@ class App extends Component{
     this.onRouteChange = this.onRouteChange.bind(this);
 
     this.state = {
-      route: 'About Me'
+      route: 'Home'
     }
   }
 
