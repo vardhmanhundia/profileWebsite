@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, ListItem, IconButton, ListItemText, Avatar, Divider, List, Typography, Box, ListItemIcon } from '@material-ui/core';
-import { AssignmentInd, Home, Apps, ContactMail } from '@material-ui/icons';
+import { Button, AppBar, Toolbar, ListItem, IconButton, ListItemText, Avatar, Divider, List, Typography, Box, ListItemIcon } from '@material-ui/core';
+import { AssignmentInd, Home, Apps, ContactMail, Person } from '@material-ui/icons';
 import { makeStyles} from '@material-ui/core/styles';
 import ProfilePhoto from '../Images/vardhman.jpg'
 import MobileRightMenuSlider from '@material-ui/core/Drawer';
 import MenuIcon from '@material-ui/icons/Menu';
+import ContactsIcon from '@material-ui/icons/Contacts';
 const userStyles = makeStyles(theme => ({
     menuSliderContainer:{
         width: 300,
@@ -29,6 +30,10 @@ const menuItems = [
         listText: "Home"
     },
     {
+        listIcon: <Person/>,
+        listText: "About Me"
+    },
+    {
         listIcon: <AssignmentInd/>,
         listText: "My Carrier"
     },
@@ -37,7 +42,7 @@ const menuItems = [
         listText: "Projects"
     },
     {
-        listIcon: <ContactMail/>,
+        listIcon: <ContactsIcon />,
         listText: "Contact Me"
     }
 ]
@@ -76,10 +81,10 @@ const Navbar = ({onRouteChange}) => {
     return (
         <>
         <Box component="nav">
-            <AppBar position="static" style={{background: "transparent"}}>
+            <AppBar position="static" style={{background: "transparent", position:"fixed", border: 0, boxShadow: '0 0 0 0 '}}>
                 <Toolbar>
                     <IconButton anchor="right" onClick={toggleSlider("right",true)}>
-                        <MenuIcon style={{color: "tomato"}}/>
+                        <MenuIcon fontSize="large" style={{color: "white"}}/>
                     </IconButton>
                     <MobileRightMenuSlider
                     anchor="left"

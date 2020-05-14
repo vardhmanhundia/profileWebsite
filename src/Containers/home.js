@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Header from '../Components/Header/header';
 import Particles from 'react-particles-js';
 import { makeStyles } from '@material-ui/core/styles';
-
 const useStyles = makeStyles(theme => ({
     pariclesCanva: {
         position: "absolute",

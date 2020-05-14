@@ -1,10 +1,14 @@
 import React from 'react';
 import './header.css';
-import { Typography, Box, Button, Avatar, Grid} from '@material-ui/core';
+import { Typography, Box, IconButton, Avatar, Grid} from '@material-ui/core';
 import ProfilePhoto from '../Images/vardhman.jpg'
 import Typed from 'react-typed';
 import { makeStyles } from '@material-ui/core/styles';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+
 
 const useStyles = makeStyles(theme => ({
     avatar: {
@@ -13,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1)
     },
     title:{
-        color: "gray",
+        color: "white",
         textAlign: "center"
     },
     subtitle:{
@@ -33,14 +37,19 @@ const useStyles = makeStyles(theme => ({
     pariclesCanva: {
         position: "absolute",
         opacity: "0.3"
+    },
+    margin: {
+        margin: theme.spacing(1)
+    },
+    extendedIcon: {
+        marginRight: theme.spacing(1),
     }
 }));
 
 const Header = () => {
     const classes = useStyles();
     return (
-        <>
-            
+        <Box>
             <Box className= {classes.typedContainer}>
                 <Grid container justify="center">
                     <Avatar
@@ -54,12 +63,15 @@ const Header = () => {
                     <Typography className= {classes.subtitle} variant="h4" >
                         <Typed strings={["IoT Engineer","MERN Developer","Web Developer"]} typeSpeed={40} loop/>
                     </Typography>
-                    <Button width="20px" variant="contained" color="primary" disableElevation>
-                    <KeyboardArrowDownIcon/>
-                    </Button>
+                    <ButtonGroup size="large" variant="text" color="white" style={{background:"transparent"}} aria-label="text primary button group">
+                        <IconButton className={classes.margin} color="primary" onClick={"https://github.com/vardhmanhundia"} > <GitHubIcon fontSize="large" /> </IconButton>
+                        <IconButton className={classes.margin} color="primary" onClick={"https://www.linkedin.com/in/vardhman-hundia/"} > <LinkedInIcon fontSize="large"  /> </IconButton>
+                        <IconButton className={classes.margin} color="primary" onClick={"https://www.facebook.com/vardhman.hundia"} > <FacebookIcon fontSize="large"  /> </IconButton>
+                    </ButtonGroup>
                 </Grid>
             </Box>
-        </>
+            
+        </Box>
     
     );
 }

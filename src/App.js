@@ -5,6 +5,7 @@ import Experience from './Containers/Experience';
 import NavBar from './Components/NavBar/navbar';
 import Projects from './Containers/projects';
 import ContactUs from './Containers/contactUs';
+import AboutMe from './Containers/aboutMe';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -22,7 +23,7 @@ class App extends Component{
     this.onRouteChange = this.onRouteChange.bind(this);
 
     this.state = {
-      route: 'Home'
+      route: 'About Me'
     }
   }
 
@@ -36,6 +37,8 @@ class App extends Component{
         <MuiThemeProvider theme = {theme} >
           <NavBar onRouteChange= {this.onRouteChange} />
           { this.state.route === "Home" ? <Home />
+            :
+            this.state.route === "About Me"? <AboutMe/>
             :
             this.state.route === "My Carrier" ? <Experience />
             :
