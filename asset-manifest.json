@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/profileWebsite/static/css/main.c38b9f5c.chunk.css",
-    "main.js": "/profileWebsite/static/js/main.b2b95c17.chunk.js",
-    "main.js.map": "/profileWebsite/static/js/main.b2b95c17.chunk.js.map",
+    "main.css": "/profileWebsite/static/css/main.30901c4a.chunk.css",
+    "main.js": "/profileWebsite/static/js/main.33dfee95.chunk.js",
+    "main.js.map": "/profileWebsite/static/js/main.33dfee95.chunk.js.map",
     "runtime-main.js": "/profileWebsite/static/js/runtime-main.42c67683.js",
     "runtime-main.js.map": "/profileWebsite/static/js/runtime-main.42c67683.js.map",
-    "static/js/2.8e664cc8.chunk.js": "/profileWebsite/static/js/2.8e664cc8.chunk.js",
-    "static/js/2.8e664cc8.chunk.js.map": "/profileWebsite/static/js/2.8e664cc8.chunk.js.map",
+    "static/js/2.011b13d5.chunk.js": "/profileWebsite/static/js/2.011b13d5.chunk.js",
+    "static/js/2.011b13d5.chunk.js.map": "/profileWebsite/static/js/2.011b13d5.chunk.js.map",
     "index.html": "/profileWebsite/index.html",
-    "precache-manifest.e5c21d00ff8d667c5b0b8543f7d5de88.js": "/profileWebsite/precache-manifest.e5c21d00ff8d667c5b0b8543f7d5de88.js",
+    "precache-manifest.5afe7728614c801dbf9bd64d69ad7052.js": "/profileWebsite/precache-manifest.5afe7728614c801dbf9bd64d69ad7052.js",
     "service-worker.js": "/profileWebsite/service-worker.js",
-    "static/css/main.c38b9f5c.chunk.css.map": "/profileWebsite/static/css/main.c38b9f5c.chunk.css.map",
-    "static/js/2.8e664cc8.chunk.js.LICENSE.txt": "/profileWebsite/static/js/2.8e664cc8.chunk.js.LICENSE.txt",
-    "static/media/vardhman.jpg": "/profileWebsite/static/media/vardhman.df542c0b.jpg"
+    "static/css/main.30901c4a.chunk.css.map": "/profileWebsite/static/css/main.30901c4a.chunk.css.map",
+    "static/js/2.011b13d5.chunk.js.LICENSE.txt": "/profileWebsite/static/js/2.011b13d5.chunk.js.LICENSE.txt",
+    "static/media/vardhman.jpg": "/profileWebsite/static/media/vardhman.df542c0b.jpg",
+    "static/media/vardhman2.jpg": "/profileWebsite/static/media/vardhman2.c9ce9f83.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.42c67683.js",
-    "static/js/2.8e664cc8.chunk.js",
-    "static/css/main.c38b9f5c.chunk.css",
-    "static/js/main.b2b95c17.chunk.js"
+    "static/js/2.011b13d5.chunk.js",
+    "static/css/main.30901c4a.chunk.css",
+    "static/js/main.33dfee95.chunk.js"
   ]
 }
