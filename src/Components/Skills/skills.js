@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Typography, Grid, Button } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import LinearProgress from '@material-ui/core/LinearProgress';
+import Title from '../title/title';
+import './skills.css';
 const useStyles = makeStyles(theme => ({
     heading: {
         color: "white"
@@ -17,17 +18,27 @@ const Skills = () => {
     return (
         <>
         <Box className={classes.box}>
-            <Typography className={classes.heading} color="primary" variant="h3" component="h2">
-                MY SKILLS
-            </Typography>
-            <Typography color="primary" variant="h2" component="h2" spacing="3" >
-               <b>MY SKILLS</b>
-            </Typography>
-            <Grid container spacing={2}>
+            <Title title={"MY SKILLS"} />
+            <Grid container>
                 <Grid item xs={12} sm={6}>
-                    <LinearProgress variant="determinate" value={30} color="secondary" />
+                    <div className="container">
+                        <ul>
+                            <li className='html'>HTML</li>
+                            <li className='css'>CSS</li>
+                            <li className='html'>JAVAScript</li>
+                            <li className='html'>JAVAScript</li>
+                        </ul>
+                    </div>
                 </Grid>
                 <Grid item xs={12} sm={6}>
+                <div className="container">
+                        <ul>
+                            <li className='html'>HTML</li>
+                            <li className='css'>CSS</li>
+                            <li className='html'>JAVAScript</li>
+                            <li className='html'>JAVAScript</li>
+                        </ul>
+                    </div>
                 </Grid>
             </Grid>
         </Box>

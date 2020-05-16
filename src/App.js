@@ -4,10 +4,10 @@ import Home from './Containers/home';
 import Experience from './Containers/Experience';
 import NavBar from './Components/NavBar/navbar';
 import Projects from './Containers/projects';
-import ContactUs from './Containers/contactUs';
+import ContactMe from './Containers/contactMe';
 import AboutMe from './Containers/aboutMe';
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 const theme = {
   spacing: 4,
@@ -31,7 +31,7 @@ class App extends Component{
     this.setState({route: page});
   }
 
-  render(){
+  render(props){
     return (
       <div className="App">
         <MuiThemeProvider theme = {theme} >
@@ -44,7 +44,7 @@ class App extends Component{
             :
             this.state.route === "Projects" ?<Projects />
             :
-            <ContactUs/>
+            <ContactMe/>
             
           }
         </MuiThemeProvider>

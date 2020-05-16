@@ -1,9 +1,7 @@
 import React from 'react';
-import {Tabs, Tab, Box, Typography, Grid, Paper} from '@material-ui/core';
+import { Box, Grid} from '@material-ui/core';
+import Title from '../Components/title/title';
 import { makeStyles } from '@material-ui/core/styles';
-import PhoneIcon from '@material-ui/icons/Phone';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
 import Project_card from '../Components/project_card/project_card';
 
 
@@ -11,6 +9,9 @@ import Project_card from '../Components/project_card/project_card';
 const useStyles = makeStyles({
     root: {
       flexGrow: 1,
+    },
+    box:{
+        padding:"6rem"
     }
   });
 
@@ -24,47 +25,35 @@ const Projects = () => {
     
     return (
         <>
-            <Box className={classes.root}>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    variant="fullWidth"
-                    indicatorColor="primary"
-                    aria-label="icon tabs example"
-                    style={{color: "white"}}
-                    >
-                    <Tab label="React" icon={<PhoneIcon />} aria-label="phone" />
-                    <Tab label="React"  icon={<FavoriteIcon />} aria-label="favorite" />
-                    <Tab label="React"  icon={<PersonPinIcon />} aria-label="person" />
-                    
-                </Tabs>
+        <Box className={classes.box}>
+            <Title title={"MY PROJECTS"} />
+                <Grid style={{ padding: 20 }} container spacing={5}>
+                    <Grid item xs={12} sm={4}>
+                        <Project_card/>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Project_card/>                
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Project_card/>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Project_card/>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Project_card/>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Project_card/>                
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Project_card/>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Project_card/>
+                    </Grid>
+                </Grid>
             </Box>
-            <Grid style={{ padding: 20 }} container spacing={5}>
-                <Grid item xs={12} sm={3}>
-                    <Project_card/>
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Project_card/>                
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Project_card/>
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Project_card/>
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Project_card/>
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Project_card/>                
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Project_card/>
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Project_card/>
-                </Grid>
-            </Grid>
         </>
     );
 }

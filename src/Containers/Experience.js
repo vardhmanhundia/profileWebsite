@@ -1,12 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Typography, Box} from '@material-ui/core';
-import { fromRenderProps } from 'recompose';
+import Title from '../Components/title/title';
 
 const useStyles = makeStyles(theme => ({
-    makeContainer: {
-        background: "#233"
-    },
     timeLine: {
         position: 'relative',
         padding: '1rem',
@@ -108,9 +105,7 @@ const Experience = () => {
     return (
         <>
             <Box component="header" className={classes.makeContainer} >
-                <Typography variant="h4" align="center" className= {classes.heading}>
-                    Working Experience
-                </Typography>
+                <center><Title title={"MY EXPERIENCE"} /></center>
                 <Box className={classes.timeLine} component="div">
                     <Typography className={` ${classes.timeLineYear} ${classes.timeLineItem} `} variant="h2">
                         2019

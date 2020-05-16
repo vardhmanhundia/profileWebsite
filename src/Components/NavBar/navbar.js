@@ -6,6 +6,34 @@ import ProfilePhoto from '../Images/vardhman.jpg'
 import MobileRightMenuSlider from '@material-ui/core/Drawer';
 import MenuIcon from '@material-ui/icons/Menu';
 import ContactsIcon from '@material-ui/icons/Contacts';
+import PropTypes from 'prop-types';
+import Slide from '@material-ui/core/Slide';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
 const userStyles = makeStyles(theme => ({
     menuSliderContainer:{
         width: 300,
@@ -49,7 +77,7 @@ const menuItems = [
 
 
 
-const Navbar = ({onRouteChange}) => {
+const Navbar = ({onRouteChange},props) => {
     const classes = userStyles();
     const [state, setState] = useState({
         right: false
@@ -80,6 +108,7 @@ const Navbar = ({onRouteChange}) => {
     
     return (
         <>
+        <HideOnScroll {...props}>
         <Box component="nav">
             <AppBar position="static" style={{background: "transparent", position:"fixed", border: 0, boxShadow: '0 0 0 0 '}}>
                 <Toolbar>
@@ -97,6 +126,7 @@ const Navbar = ({onRouteChange}) => {
             </AppBar>
 
         </Box>
+        </HideOnScroll>
         </>
     );
 }

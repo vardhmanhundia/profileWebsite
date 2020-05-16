@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Grid, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Title from '../title/title';
 import Profile from '../Images/vardhman2.jpg';
 const useStyles = makeStyles(theme => ({
     heading: {
@@ -23,12 +24,7 @@ const AboutInfo = () => {
     return (
         <>
         <Box className={classes.box}>
-            <Typography className={classes.heading} color="primary" variant="h3" component="h2">
-                ABOUT ME
-            </Typography>
-            <Typography color="primary" variant="h2" component="h2" spacing="3" >
-               <b>ABOUT ME</b>
-            </Typography>
+            <Title title={ "ABOUT ME" } />
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                     <img width="70%" height="auto" src={Profile} alt="profile"></img>
