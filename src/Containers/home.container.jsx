@@ -1,7 +1,10 @@
 import React from 'react';
-import Header from '../Components/Header/header';
+
 import Particles from 'react-particles-js';
+
 import { makeStyles } from '@material-ui/core/styles';
+
+import Header from '../Components/Header/header.component';
 const useStyles = makeStyles(theme => ({
     pariclesCanva: {
         position: "absolute",
@@ -13,9 +16,9 @@ const Home = () => {
     return (
 
         <>
-            <Particles 
-                    canvasClassName={classes.pariclesCanva}
-                    params={{
+            <Particles
+                canvasClassName={classes.pariclesCanva}
+                params={{
                     particles: {
                         number: {
                             value: 45,
@@ -24,9 +27,9 @@ const Home = () => {
                                 value_area: 900
                             }
                         },
-                        shape:{
+                        shape: {
                             type: "circle",
-                            stroke:{
+                            stroke: {
                                 width: 1,
                                 color: "tomato"
                             }
@@ -37,7 +40,7 @@ const Home = () => {
                             anim: {
                                 enable: true,
                                 speed: 6,
-                                size_min : 0.1,
+                                size_min: 0.1,
                                 sync: true
                             }
                         },
@@ -52,8 +55,8 @@ const Home = () => {
                             }
                         }
                     }
-                    }} 
-                />
+                }}
+            />
             <Header />
         </>
     )

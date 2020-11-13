@@ -4,22 +4,22 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
     heading: {
         color: "white",
-        
+
     },
-    reflection:{
+    reflection: {
         color: "#141722",
     }
 }));
 
-const Title = ({title}) => {
+const Title = ({ title }) => {
     const classes = useStyles();
     return (
         <>
             <Typography className={classes.heading} variant="h3" component="h2">
                 <b>{title}</b>
             </Typography>
-            <Typography className={classes.reflection} variant= "h2" component="h2" >
-               <b>{title}</b>
+            <Typography className={classes.reflection} variant="h2" component="h2" >
+                <b>{title}</b>
             </Typography>
         </>
     )

@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './Containers/home';
-import Experience from './Containers/Experience';
-import NavBar from './Components/NavBar/navbar';
-import Projects from './Containers/projects';
-import ContactMe from './Containers/contactMe';
-import AboutMe from './Containers/aboutMe';
+import Home from './Containers/home.container';
+import ExperiencesContainer from './Containers/experiences.container';
+import NavBar from './Components/NavBar/navbar.component';
+import Projects from './Containers/projects.container';
+import ContactMe from './Containers/contactMe.container';
+import AboutMe from './Containers/aboutMe.container';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-
 const theme = {
-  spacing: 4,
+  spacing: 2,
   palette: {
     primary: '#007bff',
   },
 };
 
 
-class App extends Component{
-  constructor(props){
+class App extends Component {
+  constructor(props) {
     super(props);
     this.onRouteChange = this.onRouteChange.bind(this);
 
@@ -27,25 +26,25 @@ class App extends Component{
     }
   }
 
-  onRouteChange (page) {
-    this.setState({route: page});
+  onRouteChange(page) {
+    this.setState({ route: page });
   }
 
-  render(props){
+  render(props) {
     return (
       <div className="App">
-        <MuiThemeProvider theme = {theme} >
-          <NavBar onRouteChange= {this.onRouteChange} />
-          { this.state.route === "Home" ? <Home />
+        <MuiThemeProvider theme={theme} >
+          <NavBar onRouteChange={this.onRouteChange} />
+          {this.state.route === "Home" ? <Home />
             :
-            this.state.route === "About Me"? <AboutMe/>
-            :
-            this.state.route === "My Carrier" ? <Experience />
-            :
-            this.state.route === "Projects" ?<Projects />
-            :
-            <ContactMe/>
-            
+            this.state.route === "About Me" ? <AboutMe />
+              :
+              this.state.route === "My Carrier" ? <ExperiencesContainer />
+                :
+                this.state.route === "Projects" ? <Projects />
+                  :
+                  <ContactMe />
+
           }
         </MuiThemeProvider>
       </div>
